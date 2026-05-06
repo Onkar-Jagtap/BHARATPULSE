@@ -35,8 +35,8 @@ export function Sidebar({ activeTab, setActiveTab, onOpenGuide }: SidebarProps) 
           <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-neon-purple to-neon-pink flex items-center justify-center shadow-[0_0_20px_rgba(217,70,239,0.4)] border border-white/20">
             <Zap size={18} className="text-white fill-white animate-pulse" />
           </div>
-          <h1 className="text-2xl font-black text-white tracking-tighter italic">
-            BP<span className="text-neon-purple"> AI</span>
+          <h1 className="text-2xl font-black text-white tracking-tighter">
+            BHARATPULSE<span className="text-neon-purple italic"> AI</span>
           </h1>
         </div>
         <p className="text-[8px] uppercase tracking-[0.4em] font-black text-white/20 ml-1">BharatPulse Strategist</p>

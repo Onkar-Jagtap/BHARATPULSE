@@ -72,7 +72,6 @@ export function QuickGuide({ isOpen, onClose }: QuickGuideProps) {
                   </div>
                   <div>
                     <h2 className="text-xl font-black text-white uppercase tracking-tighter">Quick Operations Guide</h2>
-                    <p className="text-xs text-white/40 font-bold uppercase tracking-widest">Protocol v2.4.0</p>
                   </div>
                 </div>
                 <button 

@@ -26,7 +26,7 @@ export function Header() {
         <div className="relative group">
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-neon-purple transition-colors" size={14} />
           <input 
-            placeholder="Query Constituency Node..."
+            placeholder="Search Data..."
             className="bg-white/5 border border-white/10 rounded-lg py-2 pl-11 pr-4 text-xs w-72 focus:outline-none focus:border-neon-purple/40 focus:ring-1 focus:ring-neon-purple/20 transition-all font-mono"
           />
           <kbd className="absolute right-3 top-1/2 -translate-y-1/2 text-[9px] font-mono text-white/20 bg-white/5 px-1.5 py-0.5 rounded border border-white/5">⌘K</kbd>
@@ -34,11 +34,6 @@ export function Header() {
       </div>
 
       <div className="flex items-center gap-6">
-        <div className="hidden xl:flex items-center gap-3 px-4 py-1.5 bg-neon-purple/5 border border-neon-purple/10 rounded-full">
-           <Terminal size={12} className="text-neon-purple" />
-           <span className="text-[10px] font-mono font-bold text-neon-purple uppercase tracking-widest">Protocol v2.4.0 Active</span>
-        </div>
-
         <div className="flex gap-2">
           <HeaderAction icon={Globe} label="News Hub" />
           <HeaderAction icon={Bell} label="Alert Notifications" count={5} />
