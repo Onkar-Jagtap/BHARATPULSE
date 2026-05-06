@@ -1,6 +1,6 @@
 {
   "name": "BharatPulse AI",
-  "description": "AI-Powered Political Intelligence & Constituency Analytics Platform for campaign strategy and voter sentiment analysis.",
+  "description": "Revolutionary AI-powered political intelligence platform for constituency-level survey analysis, sentiment tracking, and strategic campaign planning in the Indian political landscape.",
   "requestFramePermissions": [],
-  "majorCapabilities": []
+  "majorCapabilities": ["AI Analytics", "Geospatial Intelligence", "Campaign Strategy"]
 }

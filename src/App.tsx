@@ -21,10 +21,12 @@ import { ChatAssistant } from './components/ChatAssistant';
 import { SwingAnalyzer } from './components/SwingAnalyzer';
 import { GeoIntelligence } from './components/GeoIntelligence';
 import { ErrorBoundary } from './components/ErrorBoundary';
+import { QuickGuide } from './components/QuickGuide';
 import { generateDemoData } from './lib/demoData';
 import { VoterRecord, ProcessingStats, processSurveyData } from './lib/dataProcessor';
 
 export default function App() {
+  const [isGuideOpen, setIsGuideOpen] = React.useState(false);
   const [activeTab, setActiveTab] = React.useState('data');
   const [data, setData] = React.useState<VoterRecord[]>([]);
   const [stats, setStats] = React.useState<ProcessingStats | null>(null);
@@ -55,7 +57,11 @@ export default function App() {
         {/* Structural Scanline Effect */}
         <div className="fixed inset-0 z-0 pointer-events-none scanline opacity-30" />
         
-        <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
+        <Sidebar 
+          activeTab={activeTab} 
+          setActiveTab={setActiveTab} 
+          onOpenGuide={() => setIsGuideOpen(true)} 
+        />
 
         <main className="pl-64 min-h-screen relative z-10 flex flex-col">
           <Header />
@@ -149,6 +155,7 @@ export default function App() {
         </main>
 
         <ChatAssistant data={data} />
+        <QuickGuide isOpen={isGuideOpen} onClose={() => setIsGuideOpen(false)} />
       </div>
     </ErrorBoundary>
   );

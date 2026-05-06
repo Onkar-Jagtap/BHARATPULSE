@@ -9,15 +9,17 @@ import {
   Settings, 
   Target,
   MoreVertical,
-  Zap
+  Zap,
+  Cpu
 } from 'lucide-react';
 
 interface SidebarProps {
   activeTab: string;
   setActiveTab: (tab: string) => void;
+  onOpenGuide: () => void;
 }
 
-export function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
+export function Sidebar({ activeTab, setActiveTab, onOpenGuide }: SidebarProps) {
   const menuItems = [
     { id: 'dashboard', label: 'War Room', icon: BarChart3 },
     { id: 'maps', label: 'Geo Intel', icon: Map },
@@ -30,14 +32,14 @@ export function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
     <div className="w-64 h-screen bg-[#0d1117] border-r border-white/5 flex flex-col fixed left-0 top-0 z-50">
       <div className="p-8">
         <div className="flex items-center gap-3 mb-2">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-neon-purple to-neon-pink flex items-center justify-center shadow-[0_0_15px_rgba(217,70,239,0.3)]">
-            <Zap size={18} className="text-black" />
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-neon-purple to-neon-pink flex items-center justify-center shadow-[0_0_20px_rgba(217,70,239,0.4)] border border-white/20">
+            <Zap size={18} className="text-white fill-white animate-pulse" />
           </div>
-          <h1 className="text-xl font-black text-white tracking-tighter">
-            BHARATPULSE
+          <h1 className="text-2xl font-black text-white tracking-tighter italic">
+            BP<span className="text-neon-purple"> AI</span>
           </h1>
         </div>
-        <p className="text-[9px] uppercase tracking-[0.3em] font-black text-white/30 ml-11">AI Intelligence Core</p>
+        <p className="text-[8px] uppercase tracking-[0.4em] font-black text-white/20 ml-1">BharatPulse Strategist</p>
       </div>
 
       <nav className="flex-1 mt-6 px-4 space-y-1">
@@ -71,6 +73,17 @@ export function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
       </nav>
 
       <div className="p-6 mt-auto">
+        <button 
+          onClick={onOpenGuide}
+          className="w-full mb-4 group p-4 border border-dashed border-white/10 rounded-xl hover:border-neon-purple/40 hover:bg-neon-purple/5 transition-all text-left"
+        >
+          <div className="flex items-center gap-2 mb-1">
+            <Cpu size={14} className="text-neon-purple" />
+            <span className="text-[10px] font-black uppercase text-white/60 group-hover:text-white">Quick Guide</span>
+          </div>
+          <p className="text-[9px] text-white/20 leading-tight">Master the platform protocol in 60s.</p>
+        </button>
+
         <div className="bg-[#161b22] rounded-xl p-5 border border-white/5 space-y-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
